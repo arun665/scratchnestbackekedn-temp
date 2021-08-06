@@ -27,6 +27,11 @@ else{
     
     addData.save()
     .then(doc=>{
+
+
+
+
+
         res.status(201).json({
             message:"added user success",
             data:doc

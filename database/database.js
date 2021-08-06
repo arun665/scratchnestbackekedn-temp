@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://mongodb:Arun1117@cluster0.spwl1.mongodb.net/mongodb?retryWrites=true&w=majority",{useNewUrlParser:true , useUnifiedTopology:true,useFindAndModify:false})
+mongoose.connect("mongodb+srv://mongodb:Arun1117@cluster0.spwl1.mongodb.net/scratchnestRegister?retryWrites=true&w=majority",{useNewUrlParser:true , useUnifiedTopology:true,useFindAndModify:false})
 .then(function(){
     console.log(" this is running successfully");
 })
@@ -10,27 +10,46 @@ mongoose.connect("mongodb+srv://mongodb:Arun1117@cluster0.spwl1.mongodb.net/mong
 });
 
 const playlist=new mongoose.Schema({
-    email:{
-        type:String,
-  
-    },
-    password:{
-        type:String,
-
-    },
-    task:{
-        type:String,
-        unique:false,
-        sparse:true
+   
+    username:{
+        type: String,
        
         
     },
-    time:{
-        type:String
+    name:{
+        type: String,
+    
     },
-    status:{
-        type:String
+    contact_no:{
+        type: String,
+    
+    },
+    email:{
+        type: String,
+
+    },
+    profile:{
+        type: String
+    },
+    password:{
+        type: String,
+        
+    },
+    address:{
+        street_add:{
+            type:String,
+            
+        },
+        city:{
+            type:String,
+            
+        },
+        pin:{
+            type:String,
+      
     }
+    }
+
 });
 
 const Temp=new mongoose.model("Temp",playlist);
