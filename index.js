@@ -35,35 +35,11 @@ app.use("/api/user",adduser);
   
 // Twilio Credentials
 // To set up environmental variables, see http://twil.io/secure
+app.get("/",function(req,res,nest){
 
-app.post("/",function(req,res,nest){
-
-var message = req.body.Message;
-
-
-
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-
-// require the Twilio module and create a REST client
-const client = require('twilio')(accountSid, authToken);//asdasdasdasdasd
-    
-
-client.messages
-  .create({
-    to: '+918146411181',
-    from: '+18479735088',
-    body: message,
-  })
-  .then(message => res.json({
-    msg:"message sended success"
-  }))
-  .catch(err=>(console.log(err)));
-
+res.send("running success");
 
 
 });
-//Z1c_5U4ln4HtVEYeRqL3gT2_6VwBKljaRvoDr6-f
-
 
 app.listen(3000||process.env.PORT);
